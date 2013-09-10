@@ -5,15 +5,10 @@ Report a bug at: http://github.com/ilgarm/pyzimbra/issues
 
 Documentation available online at: http://trac.lab.az/pyzimbra/wiki
 
-Testing
--------
-Unit testing is provided through [unittest]. Because of the nature of pyzimbra,
-you need to provide credentials and a test server to make tests. So:
+Unit testing
+------------
 
-    $ cd test
-    $ cp test.properties.example test.properties
-
-Adapt test/test.properties to your needs. You can now run the test suite:
+Unit testing is provided through [unittest]. Run all unit tests by:
 
     $ ./tests/run_all_tests.py
 

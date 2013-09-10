@@ -24,16 +24,21 @@
 
 Test related methods and classes.
 
-@author: ilgar
+@author: ilgar, Jocelyn Delalande
 """
+import sys
+import os.path
+
 from ConfigParser import ConfigParser
 import pconstant
 
+TEST_PROPERTIES = os.path.join(os.path.dirname(__file__), 'test.properties')
 
 def load_test_properties(test):
     cfg = ConfigParser()
-    if len(cfg.read("test.properties")) == 0:
-        cfg.read("../test.properties")
+    if len(cfg.read(TEST_PROPERTIES)) == 0:
+        sys.stdout.write('No test.properties file')
+        exit(1)
 
     test.admin_hostname = cfg.get(pconstant.ADMIN, pconstant.HOST)
     test.admin_account_name = cfg.get(pconstant.ADMIN, pconstant.USERNAME)
