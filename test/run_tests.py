@@ -25,8 +25,15 @@
 
 Test related methods and classes.
 
-@author: ilgar
+@author: ilgar, Jocelyn Delalande
 """
+
+#  Extends pythonpath so that the local pyzimbra module is found and used prior
+#  to system-wide module
+import sys
+from os.path import dirname
+sys.path.insert(0, dirname(dirname(__file__)))
+
 from test.tests.auth import AuthTest
 from test.tests.soap import SoapTest
 from test.tests.soap_auth import SoapAuthTest
